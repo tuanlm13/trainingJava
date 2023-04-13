@@ -1,6 +1,6 @@
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.Session;
-
+import com.jcraft.jsch.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -17,10 +17,11 @@ public class dataBaseFunction {
         private static final String DB_HOST = "localhost";
         private static final int LOCAL_PORT = 4321;
 
-        public static void sshConnect()throws Exception{
+        private static Session session;
+        public static void sshConnect()throws JSchException{
             // Tạo SSH tunnel
             JSch jsch = new JSch();
-            Session session = jsch.getSession(SSH_USER, SSH_HOST, SSH_PORT);
+            session = jsch.getSession(SSH_USER, SSH_HOST, SSH_PORT);
             session.setPassword(SSH_PASSWORD);
             session.setConfig("StrictHostKeyChecking", "no");
             session.connect();
@@ -31,47 +32,16 @@ public class dataBaseFunction {
                 System.out.println("SSH connection established.");
             }
 
-
-            //DB:
-            try{
-
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:" + LOCAL_PORT + "/" + DB_NAME, DB_USER, DB_PASSWORD);
-
-                if (connection != null) {
-                    System.out.println("Connected to the database!");
-                }else{
-                    System.out.println("Failed to connect to the database!");
-                }
-
-                Statement st = connection.createStatement();
-                //String sql = "SELECT * FROM categories";
-                ResultSet rs = st.executeQuery("SELECT * FROM categories");
-                //System.out.println(rs);
-                while (rs.next()) {
-                    System.out.println(rs.getInt(1) + "  " + rs.getString(2)
-                            + "  " + rs.getString(3));
-                }
-
-            }catch(Exception ex){
-                ex.printStackTrace();
-            }
-
         }
 
-        public static void dbConnect()throws Exception{
-            // Kết nối tới cơ sở dữ liệu
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:" + LOCAL_PORT + "/" + DB_NAME, DB_USER, DB_PASSWORD);
+        //Connect DB and runsql
 
-
-        }
-
+        private static Connection connection;
         public static void runSql(String sql){
             try{
 
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:" + LOCAL_PORT + "/" + DB_NAME, DB_USER, DB_PASSWORD);
+                 connection = DriverManager.getConnection("jdbc:mysql://localhost:" + LOCAL_PORT + "/" + DB_NAME, DB_USER, DB_PASSWORD);
 
                 if (connection != null) {
                     System.out.println("Connected to the database!");
@@ -80,9 +50,9 @@ public class dataBaseFunction {
                 }
 
                 Statement st = connection.createStatement();
-                //String sql = "SELECT * FROM categories";
+
                 ResultSet rs = st.executeQuery(sql);
-                //System.out.println(rs);
+                System.out.println(rs);
                 while (rs.next()) {
                     System.out.println(rs.getInt(1) + "  " + rs.getString(2)
                             + "  " + rs.getString(3));
@@ -91,6 +61,19 @@ public class dataBaseFunction {
             }catch(Exception ex){
                 ex.printStackTrace();
             }
+        }
+
+
+        //Closed connect
+
+        public static void closedConnect(){
+            if (session != null && session.isConnected()) {
+                session.disconnect();
+                System.out.println("Disconnect DataBase...");
+            }else{
+                System.out.println("Connected DataBase...");
+            }
+
         }
 
 
