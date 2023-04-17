@@ -1,3 +1,5 @@
+package study;
+
 import java.util.*;
 
 public class list_col {
@@ -24,7 +26,7 @@ public class list_col {
 
 //        list
         Scanner sc=new Scanner(System.in);
-        System.out.println(" so luong mang: ");
+        System.out.println(" so luong study.mang: ");
         int n=sc.nextInt();
 
         //random:

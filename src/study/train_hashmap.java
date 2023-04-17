@@ -1,3 +1,5 @@
+package study;
+
 import java.util.HashMap;
 
 public class train_hashmap {

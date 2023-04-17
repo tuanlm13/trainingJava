@@ -1,3 +1,5 @@
+package study;
+
 public class demo {
     public static void main(String[] args) {
         System.out.println("tuanlm2 branch");

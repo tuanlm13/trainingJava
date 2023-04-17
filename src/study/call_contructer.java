@@ -1,3 +1,5 @@
+package study;
+
 public class call_contructer {
     call_contructer(){
 

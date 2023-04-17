@@ -1,3 +1,5 @@
+package study;
+
 public class string_func {
     public static void main(String[] args) {
         String st = "choi ne may dua";

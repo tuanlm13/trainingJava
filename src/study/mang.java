@@ -1,3 +1,5 @@
+package study;
+
 public class mang {
     public static void main(String[] args) {
         String[] arr_1;

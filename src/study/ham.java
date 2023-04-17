@@ -1,3 +1,5 @@
+package study;
+
 public class ham {
     public static void main(String[] args) {
         int ketqua=tong(1,4);
@@ -17,6 +19,6 @@ public class ham {
     }
     //hàm không trả về:
     public static void no_return(String a){
-        System.out.println(" ham khong tra ve gi cả====="+a);
+        System.out.println(" study.ham khong tra ve gi cả====="+a);
     }
 }

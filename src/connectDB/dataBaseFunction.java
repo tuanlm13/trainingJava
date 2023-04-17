@@ -1,3 +1,5 @@
+package connectDB;
+
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.Session;
 import com.jcraft.jsch.*;

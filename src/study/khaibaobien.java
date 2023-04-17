@@ -1,3 +1,5 @@
+package study;
+
 public class khaibaobien {
     public static void main(String[] args) {
 

@@ -1,3 +1,5 @@
+package study;
+
 public class function {
     public void print(String name){
 
