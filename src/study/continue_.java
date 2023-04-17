@@ -1,3 +1,5 @@
+package study;
+
 public class continue_ {
     public static void main(String[] args) {
         int tong=0;

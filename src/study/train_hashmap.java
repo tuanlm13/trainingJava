@@ -1,3 +1,5 @@
+package study;
+
 import java.util.HashMap;
 
 public class train_hashmap {
@@ -12,7 +14,7 @@ public class train_hashmap {
         has.get(1);
         System.out.println(has.size());
 
-        HashMap<String,String,Integer> has_1=new HashMap<>();
+        //HashMap<String,String,Integer> has_1=new HashMap<>();
 
 
 
