@@ -8,12 +8,12 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 public class dataBaseFunction {
-        private static final String SSH_USER = "root";
-        private static final String SSH_PASSWORD = "Minhtuan";
-        private static final String SSH_HOST = "trainingfresher.ddns.net";
+        private static final String SSH_USER = System.getenv("SSH_USER");
+        private static final String SSH_PASSWORD = System.getenv("SSH_PASSWORD");
+        private static final String SSH_HOST = System.getenv("SSH_HOST");
         private static final int SSH_PORT = 22;
-        private static final String DB_USER = "tuanlm2";
-        private static final String DB_PASSWORD = "Gmo@2021~!@#";
+        private static final String DB_USER = System.getenv("DB_USER");
+        private static final String DB_PASSWORD = System.getenv("DB_PASSWORD");
         private static final String DB_NAME = "testdb";
         private static final int DB_PORT = 3306;
         private static final String DB_HOST = "localhost";
