@@ -1,4 +1,4 @@
-package baiTap;
+package javaBasic;
 
 public class SinhVien {
 
