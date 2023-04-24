@@ -6,7 +6,8 @@ import java.util.List;
 public class Loop {
     public static void main(String[] args) {
         Loop loop = new Loop();
-        loop.forLoop(50);
+        loop.forLoop(1000);
+
 
     }
 
