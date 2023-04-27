@@ -1,8 +1,12 @@
 package javaBasic.javaBasic03;
 
 public class Conditions {
+    public static int age;
+    public static String name;
+    public static boolean gender;
 
     public static void pracices(int age){
+
         if (age<=20){
             System.out.println("very young");
         }else if(age<=30){
@@ -13,7 +17,12 @@ public class Conditions {
             System.out.println("very old");
         }else if(age>100){
             System.out.println("you are sky's man");
+        }else if(age>=100 && age<150){
+            System.out.println("you are sky's man x2");
+        }else if(age==150 || age ==151){
+            System.out.println("you are sky's man x3");
         }
+
     }
 
 
