@@ -1,4 +1,4 @@
-package javaBasic;
+package javaBasic.javaBasic02;
 
 public class Caculator {
     // function sum int:

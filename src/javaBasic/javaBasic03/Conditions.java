@@ -1,4 +1,4 @@
-package javaBasic;
+package javaBasic.javaBasic03;
 
 public class Conditions {
 

@@ -1,4 +1,4 @@
-package javaBasic;
+package javaBasic.javaBasic04;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,8 @@ import java.util.List;
 public class Loop {
     public static void main(String[] args) {
         Loop loop = new Loop();
-        loop.forLoop(50);
+        loop.forLoop(1000);
+
 
     }
 
