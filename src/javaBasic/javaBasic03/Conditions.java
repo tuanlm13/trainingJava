@@ -15,11 +15,11 @@ public class Conditions {
             System.out.println("normal old");
         }else if(age<=100){
             System.out.println("very old");
-        }else if(age>100){
+        }else if(age<150){
             System.out.println("you are sky's man");
-        }else if(age>=100 && age<150){
+        }else if(age>=150 && age<152){
             System.out.println("you are sky's man x2");
-        }else if(age==150 || age ==151){
+        }else if(age==153 || age ==154){
             System.out.println("you are sky's man x3");
         }
 
@@ -28,6 +28,6 @@ public class Conditions {
 
     public static void main(String[] args) {
         Conditions con=new Conditions();
-        con.pracices(100);
+        con.pracices(154);
     }
 }
