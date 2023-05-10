@@ -28,6 +28,6 @@ public class Conditions {
 
     public static void main(String[] args) {
         Conditions con=new Conditions();
-        con.pracices(154);
+        con.pracices(149);
     }
 }
