@@ -6,7 +6,7 @@ import java.util.List;
 public class Loop {
     public static void main(String[] args) {
         Loop loop = new Loop();
-        loop.forLoop(1000);
+        loop.forLoop(100);
 
 
     }
@@ -16,8 +16,11 @@ public class Loop {
         List<Integer> loopArray = new ArrayList<Integer>();
 
         for (int i = 1; i <= end; i++) {
-            //System.out.println(i);
-            loopArray.add(i);
+             if(i%2==0){
+                 loopArray.add(i);
+             }
+
+
         }
         //print array:
         loopArray.forEach(System.out::println);

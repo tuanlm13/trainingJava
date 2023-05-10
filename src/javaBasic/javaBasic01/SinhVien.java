@@ -14,6 +14,7 @@ public class SinhVien {
     public static String majors;
 
     public static void nameValue(String name){
+
         System.out.println("student name: "+ name);
     }
 
